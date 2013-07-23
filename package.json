@@ -1,0 +1,29 @@
+{
+  "name": "persist-schema",
+  "version": "0.0.1",
+  "description": "node-persist schema extension.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/torworx/node-persist-schema.git"
+  },
+  "keywords": [
+    "node",
+    "persist",
+    "schema"
+  ],
+  "author": "Tao Yuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/torworx/node-persist-schema/issues"
+  },
+  "dependencies": {
+    "persist": "~0.2.7"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0"
+  }
+}
