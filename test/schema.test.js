@@ -10,5 +10,19 @@ describe('Schema', function() {
         });
         assert.equal(schema.models.Person, Person);
         assert.equal(schema.model('person'), Person);
-    })
+    });
+
+    it('values', function() {
+        var schema = new Schema();
+        var Person = schema.define("Person", {
+            "name": t.STRING
+        });
+        var person = new Person({name: 'taoyuan'});
+        var values = person.values();
+        var keys = Object.keys(values);
+        assert.equal(keys.length, 2);
+        assert.ok(keys.indexOf('id') >= 0);
+        assert.ok(keys.indexOf('name') >= 0);
+        assert.equal(values.name, 'taoyuan');
+    });
 });
