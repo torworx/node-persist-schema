@@ -3,6 +3,7 @@ var Schema = require('../').Schema,
     assert = require('assert');
 
 describe('Schema', function() {
+
     it('define', function() {
         var schema = new Schema();
         var Person = schema.define("Person", {
@@ -24,5 +25,14 @@ describe('Schema', function() {
         assert.ok(keys.indexOf('id') >= 0);
         assert.ok(keys.indexOf('name') >= 0);
         assert.equal(values.name, 'taoyuan');
+    });
+
+    it('connection event', function (done) {
+        var schema = new Schema;
+        schema.on('connection', function (connection, _schema) {
+            assert.ok(connection);
+            assert.equal(schema, _schema);
+            done();
+        });
     });
 });
